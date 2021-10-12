@@ -1,0 +1,18 @@
+a{
+    text-decoration: none;
+}
+
+.css-1mkh0oi-MuiPaper-root-MuiCard-root{
+    padding: 0px 20px !important;
+    background-color: white !important;
+    transition: 0.5s !important;
+}
+
+.css-1mkh0oi-MuiPaper-root-MuiCard-root:hover{
+    box-shadow: 0px 10px 14px rgba(38, 38, 38, 0.2);
+    transform: scale(1.04)
+}
+
+.css-185gdzj-MuiCardHeader-root{
+    padding-left: 0px !important;
+}

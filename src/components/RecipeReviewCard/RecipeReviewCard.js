@@ -3,53 +3,67 @@ import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
 import Avatar from '@mui/material/Avatar';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+import dayjs from 'dayjs';
+import './RecipeReviewCard.css'
+import ln from '../../images/laNacion.png'
+import amb from '../../images/ambito.png'
+import clarin from '../../images/clarin.png'
+import dr from '../../images/dr.jpg'
+import infobae from '../../images/infobae.png'
+import ole from '../../images/ole.png'
+import perfil from '../../images/perfil.png'
+import telam from '../../images/telam.png'
+import ip from '../../images/ip.jpg'
+import ra from '../../images/ra.jpg'
 
 
-export default function RecipeReviewCard({noticia}) {
-    const { img_url, source_name, title, url, date } = noticia
-    return (
-        <Card sx={{ maxWidth: 345 }}>
-          <CardHeader
-            avatar={
-              <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                R
-              </Avatar>
-            }
-            action={
-              <IconButton aria-label="settings">
-                <MoreVertIcon />
-              </IconButton>
-            }
-            title={source_name}
-            subheader={date}
-          />
-          <CardMedia
-            component="img"
-            height="194"
-            image={img_url}
-            alt="Paella dish"
-          />
-          <CardContent>
-            <Typography variant="body2" color="text.secondary">
-              {title}
-            </Typography>
-          </CardContent>
-          <CardActions disableSpacing>
-            <IconButton aria-label="add to favorites">
-              <FavoriteIcon />
-            </IconButton>
-            <IconButton aria-label="share">
-              <ShareIcon />
-            </IconButton>
-          </CardActions>
-        </Card>
-      );
-    }
+export default function RecipeReviewCard({ noticia }) {
+  const { img_url, source_name, title, url, date } = noticia
+
+  const fuente = {
+    Ámbito: amb,
+    InfoBae: infobae,
+    Clarin: clarin,
+    La_Nacion: ln,
+    Olé: ole,
+    Perfil: perfil,
+    Registrado: dr,
+    Telam: telam,
+    RED_ACCION: ra,
+    iProfesional: ip
+  }
+
+  return (
+    <a href={url} target='_blank' rel='noreferrer'>
+      <Card sx={{ maxWidth: 365 }}>
+        <CardHeader
+          avatar={
+            source_name.forEach(element => {
+              if (element === fuente) {
+                <Avatar>
+                  <img src={source_name} alt='logo'></img>
+                </Avatar>
+              }
+
+            })
+          }
+          title={source_name}
+          subheader={dayjs.unix(date).format('DD[/]MM[/]YYYY')}
+        />
+        <CardMedia
+          component="img"
+          height="194"
+          image={img_url}
+          alt="Paella dish"
+        />
+        <CardContent>
+          <Typography variant="body2" color="text.secondary">
+            {title}
+          </Typography>
+        </CardContent>
+      </Card>
+    </a >
+  );
+}

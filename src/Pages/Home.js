@@ -1,9 +1,10 @@
 import { React, useState, useEffect } from 'react'
 import ResponsiveGrid from '../components/ResponsiveGrid/ResponsiveGrid'
-import ToogleColorMode from '../components/ToogleColorMode/ToogleColorMode'
 import SimpleContainer from '../components/SimpleContainer/SimpleContainer';
 import Loader from '../components/Loader/Loader'
 import axios from 'axios';
+import dayjs from 'dayjs';
+import HeroContainer from '../components/HeroContainer/HeroContainer';
 
 const Home = () => {
 
@@ -12,14 +13,17 @@ const Home = () => {
     const [noticias, setNoticias] = useState([])
     const [loading, setLoading] = useState(false)
 
+
+    const today = dayjs(new Date()).format('YYYY[-]MM[-]DD')
+
     useEffect(() => {
         const fetchNoticias = async () => {
             setLoading(true)
 
             try {
-                const noticiasFromApi = await axios.get('https://api.canillitapp.com/latest/2021-09-30');
+                const noticiasFromApi = await axios.get(`https://api.canillitapp.com/latest/${today}`);
                 console.log(noticiasFromApi)
-                setNoticias(noticiasFromApi.data.slice(0, 28))
+                setNoticias(noticiasFromApi.data.slice(0, 27))
                 setLoading(false)
 
             } catch (error) {
@@ -35,8 +39,8 @@ const Home = () => {
 
     return (
         <>
-            <ToogleColorMode />
             {loading && <Loader />}
+            <HeroContainer />
             <SimpleContainer>
                 {!loading && <ResponsiveGrid noticias={noticias} />}
             </SimpleContainer>
