@@ -11,7 +11,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import MenuDrawer from '../MenuDrawer/MenuDrawer';
 import './SearchAppBar.css';
 import { withRouter } from 'react-router-dom';
-import maimoLogo from '../../images/maimoWhite.png'
+import maimoLogo from '../../images/maimoLogo.png'
+import '../MenuDrawer/MenuDrawer.css'
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -70,7 +71,7 @@ const SearchAppBar = ({ history }) => {
 
   return (
     <>
-      <MenuDrawer isOspen={open} toggleDrawer={toggleDrawer} />
+      <MenuDrawer isOpen={open} toggleDrawer={toggleDrawer} />
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static">
           <Toolbar>
@@ -90,8 +91,7 @@ const SearchAppBar = ({ history }) => {
               component="div"
               sx={{ display: { xs: 'none', sm: 'block' } }}
             >
-              <img src={maimoLogo} alt='logo'></img>
-              <span>Toda la actualidad en un sólo lugar</span>
+              <a href='http://localhost:3000'><img src={maimoLogo} alt='logo'></img></a>
             </Typography>
             <Search>
               <SearchIconWrapper>

@@ -40,17 +40,17 @@ export default function RecipeReviewCard({ noticia }) {
       <Card sx={{ maxWidth: 365 }}>
         <CardHeader
           avatar={
-            source_name.forEach(element => {
-              if (element === fuente) {
+            //source_name.forEach(element => {
+              //if (element === fuente) {
                 <Avatar>
                   <img src={source_name} alt='logo'></img>
                 </Avatar>
-              }
+              //}
 
-            })
+            //})
           }
           title={source_name}
-          subheader={dayjs.unix(date).format('DD[/]MM[/]YYYY')}
+          subheader={dayjs.unix(date).locale("es").format('MMMM D, YYYY')}
         />
         <CardMedia
           component="img"

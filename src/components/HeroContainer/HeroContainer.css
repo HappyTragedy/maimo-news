@@ -1,4 +1,25 @@
 .css-19r6kue-MuiContainer-root{
-    padding: 0px !important;
-    height: 55vh;
+    background-image:
+    linear-gradient(to right, #fafcff, #fafcff00),
+    url('../../images/01.jpg');
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 65vh;
+}
+
+#logo{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 33%;
+    top: 42%;
+    transform: translateY(-50%);
+}
+
+#logo span{
+    font-family: system-ui;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-left: 2%;
 }
