@@ -29,13 +29,13 @@ export default function TemporaryDrawer({ isOpen, toggleDrawer }) {
 
     const list = (anchor) => (
 
-        <Box
+        <Box style= {{background: '#0d152c', marginTop: '4.3%'}}
             sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
             role="presentation"
             onClick={toggleDrawer}
             onKeyDown={toggleDrawer}
         >
-            <List style= {{background: '#0d152c', marginTop: '4.3%'}}>
+            <List>
                 {secciones.map(({ label, url, icon }) =>//Un map donde se dice que para cada una de las secciones genera el link correspondiente de acuerdo a lo seleccionado.
                     <Link to={`/category/${url}`} style={{color: 'white'}}>
                         <ListItem button>
