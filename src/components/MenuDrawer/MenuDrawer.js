@@ -52,7 +52,7 @@ export default function TemporaryDrawer({ isOpen, toggleDrawer }) {
 
     return (
         <>
-            <Drawer style= {{background: '#0d152c', marginTop: '4.3%'}}
+            <Drawer style= {{backgroundColor: '#0d152c', marginTop: '4.3%'}}
                 anchor={'left'}
                 open={isOpen}
                 onClose={toggleDrawer}
