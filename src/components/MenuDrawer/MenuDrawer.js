@@ -23,7 +23,7 @@ export default function TemporaryDrawer({ isOpen, toggleDrawer }) {
         { label: 'Tecnologia', url: 'tecnologia', icon: <ComputerIcon style={{fontSize:'large', fill:'white'}}/>},
         { label: 'Espectaculos', url: 'espectaculos', icon: <TheaterComedyIcon style={{fontSize:'large', fill:'white'}}/> },
         { label: 'Internacionales', url: 'internacionales', icon:  <FlagIcon style={{fontSize:'large', fill:'white'}}/>},
-        { label: 'Diseño', url: 'disenio', icon: <DesignServicesIcon style={{fontSize:'large', fill:'white'}}/> },
+        { label: 'Diseño', url: 'diseño', icon: <DesignServicesIcon style={{fontSize:'large', fill:'white'}}/> },
         { label: 'Gaming', url: 'gaming', icon: <GamepadIcon style={{fontSize:'large', fill:'white'}}/> }
     ]
 
