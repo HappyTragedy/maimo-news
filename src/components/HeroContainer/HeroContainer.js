@@ -11,7 +11,7 @@ export default function HeroContainer({ children }) {
       <CssBaseline />
       <Container style={{
         background: 'linear-gradient(to right, #fafcff, #fafcff00)', backgroundImage:
-          `url(${background})`
+          `url(${background})`, backgroundPosition: 'right', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', height: '65vh'
       }} maxWidth="xl">
         {children}
         <div id='logo'>
