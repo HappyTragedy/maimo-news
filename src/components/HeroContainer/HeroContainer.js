@@ -5,12 +5,16 @@ import './HeroContainer.css';
 import maimoText from '../../images/maimoBlack.png';
 import background from '../../images/01.jpg'
 
+const mystyle={
+  background: 'linear-gradient(to right, #fafcff, #fafcff00)'
+}
+
 export default function HeroContainer({ children }) {
   return (
     <React.Fragment>
       <CssBaseline />
       <Container style={{
-        background: 'linear-gradient(to right, #fafcff, #fafcff00)', backgroundImage:
+        mystyle, backgroundImage:
           `url(${background})`, backgroundPosition: 'right', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', height: '65vh'
       }} maxWidth="xl">
         {children}
