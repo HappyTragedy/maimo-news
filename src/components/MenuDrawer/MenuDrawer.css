@@ -7,3 +7,7 @@
 .css-4t3x6l-MuiPaper-root-MuiDrawer-paper span{
     color: white;
 }
+
+.css-bshv44-MuiButtonBase-root-MuiListItem-root:hover{
+    background-color: #1b2a5a !important;
+}
