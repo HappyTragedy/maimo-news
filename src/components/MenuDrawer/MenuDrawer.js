@@ -29,7 +29,7 @@ export default function TemporaryDrawer({ isOpen, toggleDrawer }) {
 
     const list = (anchor) => (
 
-        <Box style= {{background: '#0d152c', marginTop: '4.3%'}}
+        <Box
             sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
             role="presentation"
             onClick={toggleDrawer}
@@ -52,7 +52,7 @@ export default function TemporaryDrawer({ isOpen, toggleDrawer }) {
 
     return (
         <>
-            <Drawer
+            <Drawer style= {{background: '#0d152c', marginTop: '4.3%'}}
                 anchor={'left'}
                 open={isOpen}
                 onClose={toggleDrawer}
